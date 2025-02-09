@@ -65,8 +65,8 @@
             animation: slideIn 1s ease-out;
         }
 
-        /* Mute Button Styling */
-        .mute-button {
+        /* Play/Mute Button Styling */
+        .button {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -77,17 +77,6 @@
             cursor: pointer;
             z-index: 1;
             text-transform: uppercase; /* Ensures the text is displayed in uppercase */
-        }
-
-        /* Play Button Styling */
-        #playButton {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 1;
-            text-transform: uppercase;
         }
 
         /* Link Styling */
@@ -168,11 +157,8 @@
     </style>
 </head>
 <body>
-    <!-- Mute Button -->
-    <button class="mute-button" id="muteButton" onclick="toggleMute()">MUTE</button>
-
-    <!-- Play Button -->
-    <button id="playButton" onclick="playAudio()">Play Music</button>
+    <!-- Play Music Button -->
+    <button class="button" id="playButton" onclick="playAudio()">Play Music</button>
 
     <!-- Include the AYK logo -->
     <img src="ayklogo.png" alt="AYK Productions Logo" class="logo">
@@ -198,9 +184,17 @@
         // Function to play the audio
         function playAudio() {
             var audio = document.getElementById('backgroundAudio');
-            var button = document.getElementById('playButton');
+            var playButton = document.getElementById('playButton');
+            var muteButton = document.createElement('button');
+            muteButton.className = 'button';
+            muteButton.id = 'muteButton';
+            muteButton.textContent = 'MUTE';
+            muteButton.onclick = function () { toggleMute(); };
+
+            // Play the audio
             audio.play();
-            button.style.display = 'none'; // Hide the play button after starting the audio
+            // Replace play button with mute button
+            playButton.replaceWith(muteButton);
         }
 
         // Function to toggle mute/unmute
