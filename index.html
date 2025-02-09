@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ayk</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-image: url('aykbkgrd.jpeg'); /* Background image */
+            background-size: cover; /* Ensure the image covers the entire screen */
+            background-position: center; /* Center the image */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        /* Logo Styling */
+        .logo {
+            width: 100px; /* Adjust the width as needed */
+            height: auto;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Header Styling */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-out;
+        }
+
+        /* Link Styling */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .link {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .link:hover {
+            background-color: #fff;
+            color: #121212;
+            transform: scale(1.1);
+        }
+
+        .link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .link:hover::before {
+            width: 0;
+            height: 0;
+        }
+
+        /* Footer Styling */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8rem;
+            color: #fff;
+            animation: slideIn 1s ease-out;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Include the AYK logo -->
+    <img src="ayklogo.png" alt="AYK Productions Logo" class="logo">
+    <h1>ayk</h1>
+    <div class="links">
+        <a href="https://music.apple.com/us/artist/ayk/1783530020" class="link">Apple Music</a>
+        <a href="https://open.spotify.com/artist/2vgijoIk5x4zHbFW2gtvko?si=tyG2ZxMxTp-eZujfSQloeQ" class="link">Spotify</a>
+        <a href="https://www.instagram.com/aykproductions_/" class="link">Instagram</a>
+        <a href="https://www.youtube.com/@ayk-ache" class="link">YouTube</a>
+        <a href="https://x.com/AcheRecordings" class="link">X</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 ayk Productions</p>
+    </footer>
+</body>
+</html>
