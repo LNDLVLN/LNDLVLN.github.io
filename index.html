@@ -70,6 +70,17 @@
             text-transform: uppercase; /* Ensures the text is displayed in uppercase */
         }
 
+        /* Play Button Styling */
+        #playButton {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1;
+            text-transform: uppercase;
+        }
+
         /* Link Styling */
         .links {
             display: flex;
@@ -151,6 +162,9 @@
     <!-- Mute Button -->
     <button class="mute-button" id="muteButton" onclick="toggleMute()">MUTE</button>
 
+    <!-- Play Button -->
+    <button id="playButton" onclick="playAudio()">Play Music</button>
+
     <!-- Include the AYK logo -->
     <img src="ayklogo.png" alt="AYK Productions Logo" class="logo">
     <h1>ayk</h1>
@@ -166,12 +180,20 @@
     </footer>
 
     <!-- Audio Element -->
-    <audio id="backgroundAudio" autoplay loop>
-        <source src="background-music.mp3" type="audio/mp3">
+    <audio id="backgroundAudio" loop>
+        <source src="background_music.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <script>
+        // Function to play the audio
+        function playAudio() {
+            var audio = document.getElementById('backgroundAudio');
+            var button = document.getElementById('playButton');
+            audio.play();
+            button.style.display = 'none'; // Hide the play button after starting the audio
+        }
+
         // Function to toggle mute/unmute
         function toggleMute() {
             var audio = document.getElementById('backgroundAudio');
