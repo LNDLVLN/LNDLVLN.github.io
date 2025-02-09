@@ -67,6 +67,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 1;
+            text-transform: uppercase; /* Ensures the text is displayed in uppercase */
         }
 
         /* Link Styling */
@@ -148,7 +149,7 @@
 </head>
 <body>
     <!-- Mute Button -->
-    <button class="mute-button" id="muteButton" onclick="toggleMute()">🔊</button>
+    <button class="mute-button" id="muteButton" onclick="toggleMute()">Mute</button>
 
     <!-- Include the AYK logo -->
     <img src="ayklogo.png" alt="AYK Productions Logo" class="logo">
@@ -177,10 +178,10 @@
             var button = document.getElementById('muteButton');
             if (audio.muted) {
                 audio.muted = false;
-                button.innerHTML = '🔊'; // Unmute icon
+                button.textContent = 'MUTE';
             } else {
                 audio.muted = true;
-                button.innerHTML = '🔈'; // Mute icon
+                button.textContent = 'UNMUTE';
             }
         }
     </script>
